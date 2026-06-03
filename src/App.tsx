@@ -9,6 +9,7 @@ import { About } from './components/About';
 import { Dashboard } from './components/Dashboard';
 import { PresidencyMessage } from './components/PresidencyMessage';
 import { FAQ } from './components/FAQ';
+import { Partners } from './components/Partners';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
         <Dashboard />
         <PresidencyMessage />
         <FAQ />
+        <Partners />
       </main>
       <Footer />
     </div>

@@ -8,12 +8,19 @@ export interface FAQItem {
 export interface FinancialData {
   category: string;
   percentage: number;
+  number?: string;
 }
 
 export interface RoadmapItem {
   phase: string;
   task: string;
   date: string;
+}
+
+export interface Partner {
+  name: string;
+  logoUrl: string;
+  link: string;
 }
 
 export interface AtlasData {
@@ -47,6 +54,7 @@ export interface AtlasData {
     author: string;
   };
   faq: FAQItem[];
+  partners: Partner[];
   social: {
     instagram: string;
     linktree: string;
@@ -66,9 +74,9 @@ export const atlasData: AtlasData = {
   },
   dashboard: {
     financial: [
-      { category: "Lançamento", percentage: 5 },
-      { category: "Pré-eventos", percentage: 10 },
-      { category: "Festa de Formatura", percentage: 79 },
+      { category: "Lançamento", percentage: 4 , number: "R$ 25.000" },
+      { category: "Pré-eventos", percentage: 7 },
+      { category: "Festa de Formatura", percentage: 82 },
       { category: "After Party", percentage: 7 }
     ],
     roadmap: [
@@ -77,7 +85,9 @@ export const atlasData: AtlasData = {
       { phase: "Ativações & Pré", task: "Identidade Visual Base", date: "Jan 2026" },
       { phase: "Pré Lançamento", task: "Criação do Balção de Ativações", date: "Fev 2026" },
       { phase: "Pré Lançamento", task: "Ativações nas Unidades Paulista e Faria Lima", date: "Mar 2026" },
-      { phase: "Lançamento", task: "Live de Lançamento", date: "Mar 2026" }
+      { phase: "Lançamento", task: "Live de Lançamento", date: "Mar 2026" },
+      { phase: "Lançamento", task: "Local e Data Definida", date: "Mai 2026" },
+      { phase: "Lançamento", task: "Ativações sobre a Copa", date: "Jun 2026" }
     ],
     legal: {
       title: "Jurídico",
@@ -96,7 +106,7 @@ Assim, o conceito do projeto transforma a formatura em uma grande celebração d
   },
   presidency: {
     title: "Palavra da Presidência",
-    message: "Estamos trabalhando incansavelmente para garantir que cada centavo investido retorne em forma de excelência. A transparência não é apenas uma promessa, é o pilar da nossa gestão. Contamos com a participação de todos para fazermos história.",
+    message: "Nosso compromisso, enquanto comissão, é trabalhar com seriedade, transparência e dedicação para que a formatura represente, da melhor forma possível, o esforço coletivo de todos. Cada decisão tomada busca garantir que esse momento seja marcante, organizado e digno da trajetória que construímos juntos. Contem com a gente!",
     author: "Beatriz Torresi e Maria Fernanda - Presidência da Comissão Ibmec 26"
   },
   faq: [
@@ -133,6 +143,28 @@ Por isso, o limite de 10/03 garante que quem parcelar em 12x consiga terminar de
 Taxas
 • Taxa transacional do cartão de crédito: 2,99%
 • Taxa de emissão para boleto e Pix: R$ 2,50`
+    }
+  ],
+  partners: [
+    {
+      name: "Blacktag Formaturas",
+      logoUrl: "/images/Blacktag.png",
+      link: "https://blacktagformaturas.com.br"
+    },
+    {
+      name: "Toy Formaturas",
+      logoUrl: "/images/toy sem fundp.png",
+      link: "https://www.instagram.com/toy.formaturas/"
+    },
+    {
+      name: "Studio V",
+      logoUrl: "/images/Logo - Studio V - Branco.png",
+      link: "https://www.instagram.com/studiov_sp/"
+    },
+    {
+      name: "Arcanjos - Réveillon ",
+      logoUrl: "/images/Arcanjos.png",
+      link: "https://acesso2.baladapp.com.br/?follow_url=aHR0cHM6Ly92aXRyaW5lLmJhbGFkYXBwLmNvbS5ici9wdC1CUi9ldmVudG9zL3JldmVpbGxvbi1hcmNhbmpvcy0yMDI3Lzg3NTg="
     }
   ],
   social: {

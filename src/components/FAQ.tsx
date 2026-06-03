@@ -11,30 +11,33 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-[var(--color-atlas-bg)]">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-serif font-bold text-white mb-4">Perguntas Frequentes</h2>
-          <p className="text-gray-400">Tire suas dúvidas sobre a gestão e o evento.</p>
+    <section id="faq" className="py-20 md:py-32 bg-[var(--color-atlas-bg)]">
+      <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-16 md:mb-24">
+          <span className="text-[var(--color-atlas-copper)] text-xs font-medium tracking-[0.2em] uppercase mb-4 block">Dúvidas</span>
+          <h2 className="text-3xl md:text-4xl font-serif font-medium text-white mb-6">Perguntas Frequentes</h2>
+          <p className="text-gray-400 font-light">Tire suas dúvidas sobre a gestão e o evento.</p>
         </div>
 
         <div className="space-y-4">
           {atlasData.faq.map((item, index) => (
             <div 
               key={index} 
-              className={`border border-[var(--color-atlas-border)] rounded-lg overflow-hidden transition-all duration-300 ${
-                activeIndex === index ? 'border-[var(--color-atlas-copper)] bg-[var(--color-atlas-card)]' : 'bg-[var(--color-atlas-card)]/50 hover:border-[var(--color-atlas-copper)]/50'
+              className={`border rounded-lg overflow-hidden transition-all duration-500 ${
+                activeIndex === index 
+                  ? 'border-[var(--color-atlas-copper)]/30 bg-[var(--color-atlas-card)]' 
+                  : 'border-[var(--color-atlas-border)]/50 bg-transparent hover:border-[var(--color-atlas-copper)]/20'
               }`}
             >
               <button
                 onClick={() => toggleIndex(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+                className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none group"
               >
-                <span className={`font-medium text-lg ${activeIndex === index ? 'text-white' : 'text-gray-300'}`}>
+                <span className={`font-medium text-base md:text-lg transition-colors duration-300 ${activeIndex === index ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`}>
                   {item.question}
                 </span>
-                <span className={`ml-4 flex-shrink-0 text-[var(--color-atlas-copper)] transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''}`}>
-                  {activeIndex === index ? <Minus size={20} /> : <Plus size={20} />}
+                <span className={`ml-4 flex-shrink-0 text-[var(--color-atlas-copper)] transition-transform duration-500 ${activeIndex === index ? 'rotate-180' : ''}`}>
+                  {activeIndex === index ? <Minus size={18} /> : <Plus size={18} />}
                 </span>
               </button>
 
@@ -44,9 +47,9 @@ export function FAQ() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
                   >
-                    <div className="px-6 pb-6 text-gray-400 leading-relaxed border-t border-[var(--color-atlas-border)]/50 pt-4 whitespace-pre-line text-justify">
+                    <div className="px-6 pb-6 text-gray-400 leading-relaxed border-t border-[var(--color-atlas-border)]/30 pt-4 whitespace-pre-line text-justify font-light text-sm md:text-base">
                       {item.answer}
                     </div>
                   </motion.div>
