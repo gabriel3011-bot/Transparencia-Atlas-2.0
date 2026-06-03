@@ -65,7 +65,7 @@ export const atlasData: AtlasData = {
   hero: {
     title: "Transparência Atlas",
     subtitle: "Acompanhe em tempo real a gestão financeira e o progresso da nossa comissão de formatura. Compromisso com a clareza e a excelência.",
-    lastUpdate: "Março/2026"
+    lastUpdate: "Junho/2026"
   },
   about: {
     title: "Quem Somos",
